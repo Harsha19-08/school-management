@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+:root, [data-school="das"] {
+  --primary: #173B75; --interactive: #2563EB; --hover: #1D4ED8; --soft: #E9F1FF; --accent: #C49A52;
+  --canvas: #FAF9F6; --surface: #FFFFFF; --text: #20232B; --muted: #737987; --border: #E7E8ED;
+  --success: #24845A; --warning: #B7791F; --error: #C24141;
+}
+[data-school="stmarys"] { --primary: #51318B; --interactive: #7650C9; --hover: #6240A6; --soft: #F0EAFE; --accent: #65A895; }
+
+@theme inline {
+  --color-primary: var(--primary); --color-interactive: var(--interactive); --color-hover: var(--hover); --color-soft: var(--soft); --color-accent: var(--accent);
+  --color-canvas: var(--canvas); --color-surface: var(--surface); --color-ink: var(--text); --color-muted: var(--muted); --color-line: var(--border);
+  --color-success: var(--success); --color-warning: var(--warning); --color-danger: var(--error);
+  --font-sans: "Manrope Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "DM Serif Display", Georgia, serif;
+  --font-mono: "JetBrains Mono Variable", ui-monospace, monospace;
+  --radius-card: 14px;
+}
+
+html { background: var(--canvas); }
+body { background: var(--canvas); color: var(--text); font-family: var(--font-sans); -webkit-font-smoothing: antialiased; }
+h1, h2, h3, .font-display { font-family: var(--font-serif); font-weight: 400; letter-spacing: -0.01em; }
+.accent-italic { font-family: var(--font-serif); font-style: italic; color: var(--interactive); }
+:focus-visible { outline: 2px solid var(--interactive); outline-offset: 2px; border-radius: 6px; }
+::selection { background: var(--soft); }
+@media (prefers-reduced-motion: reduce) { * { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
+.safe-bottom { padding-bottom: max(0.5rem, env(safe-area-inset-bottom)); }
